@@ -1,5 +1,8 @@
 package learn.spring.model;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
@@ -31,5 +34,14 @@ public class Pet {
 		this.animal = animal;
 	}
 	
+	@PostConstruct
+	public void postConstruct() {
+		System.out.println("\t>> Đối tượng PET  sau khi khởi tạo sẽ chạy hàm này");
+
+	}
 	
+	@PreDestroy
+	public void preDestroy () {
+		System.out.println("\t>> Đối tượng PET trước khi hủy sẽ chạy hàm này");
+	}
 }
